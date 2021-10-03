@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20211003 20:01:00.123" rpa="false" schemaversion="2">
+<suite id="s1" name="TC01 valid newcustomer" source="D:\Projects\Central\Practice\Robotpractice_Guru\testcases\TC01_valid_newcustomer.robot">
+<test id="s1-t1" name="TC01: Create new valid customer aaaaa">
+<kw name="Open browser to page" library="common_keywords" type="SETUP">
+<arg>${base_url}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211003 20:01:00.623" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000226763E6820&gt;</msg>
+<status status="PASS" starttime="20211003 20:01:00.623" endtime="20211003 20:01:00.623"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${exclude}</var>
+<arg>"fasp"=True</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211003 20:01:00.623" level="INFO">${exclude} = {'"fasp"': 'True'}</msg>
+<status status="PASS" starttime="20211003 20:01:00.623" endtime="20211003 20:01:00.623"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${prefs}</var>
+<arg>protocol_handler.excluded_schemes=${exclude}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211003 20:01:00.624" level="INFO">${prefs} = {'protocol_handler.excluded_schemes': {'"fasp"': 'True'}}</msg>
+<status status="PASS" starttime="20211003 20:01:00.623" endtime="20211003 20:01:00.624"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211003 20:01:00.624" endtime="20211003 20:01:00.624"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20211003 20:01:00.624" endtime="20211003 20:01:00.624"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20211003 20:01:00.624" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20211003 20:01:00.624" endtime="20211003 20:01:01.645"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211003 20:01:01.645" endtime="20211003 20:01:01.777"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${speed}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211003 20:01:01.777" endtime="20211003 20:01:01.777"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211003 20:01:01.777" level="INFO">Opening url 'http://www.demo.guru99.com/V4/index.php'</msg>
+<status status="PASS" starttime="20211003 20:01:01.777" endtime="20211003 20:01:03.773"/>
+</kw>
+<status status="PASS" starttime="20211003 20:01:00.623" endtime="20211003 20:01:03.773"/>
+</kw>
+<kw name="TC01: Create new valid customer">
+<arg>aaaaa</arg>
+<arg>${gender_value} ${dob}</arg>
+<arg>mydinh</arg>
+<arg>${city} ${state}</arg>
+<arg>123456</arg>
+<arg>123456789</arg>
+<arg>aaa@gmail.com</arg>
+<arg>aaa@123</arg>
+<msg timestamp="20211003 20:01:03.773" level="FAIL">Invalid argument specification: Multiple errors:
+- Invalid argument syntax '${gender_value} ${dob}'.
+- Invalid argument syntax '${city} ${state}'.</msg>
+<status status="FAIL" starttime="20211003 20:01:03.773" endtime="20211003 20:01:03.773"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211003 20:01:03.775" endtime="20211003 20:01:05.925"/>
+</kw>
+<status status="FAIL" starttime="20211003 20:01:00.622" endtime="20211003 20:01:05.925">Invalid argument specification: Multiple errors:
+- Invalid argument syntax '${gender_value} ${dob}'.
+- Invalid argument syntax '${city} ${state}'.</status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20211003 20:01:05.926" endtime="20211003 20:01:05.926"/>
+</kw>
+<status status="FAIL" starttime="20211003 20:01:00.123" endtime="20211003 20:01:05.927"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC01 valid newcustomer">TC01 valid newcustomer</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20211003 20:01:00.123" level="ERROR">Error in test case file 'D:\Projects\Central\Practice\Robotpractice_Guru\testcases\TC01_valid_newcustomer.robot': Creating keyword 'TC01: Create new valid customer' failed: Invalid argument specification: Multiple errors:
+- Invalid argument syntax '${gender_value} ${dob}'.
+- Invalid argument syntax '${city} ${state}'.</msg>
+<msg timestamp="20211003 20:01:00.585" level="ERROR">Error in file 'D:\Projects\Central\Practice\Robotpractice_Guru\resources\imports_resources.robot' on line 9: Importing library 'AppiumLibrary' failed: ModuleNotFoundError: No module named 'AppiumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\PC\AppData\Local\Programs\Python\Python39\Scripts\robot.exe
+  C:\Users\PC\AppData\Local\Programs\Python\Python39\python39.zip
+  C:\Users\PC\AppData\Local\Programs\Python\Python39\DLLs
+  C:\Users\PC\AppData\Local\Programs\Python\Python39\lib
+  C:\Users\PC\AppData\Local\Programs\Python\Python39
+  C:\Users\PC\AppData\Local\Programs\Python\Python39\lib\site-packages</msg>
+<msg timestamp="20211003 20:01:00.592" level="ERROR">Error in file 'D:\Projects\Central\Practice\Robotpractice_Guru\resources\imports_resources.robot' on line 10: Importing library 'TemplatedData' failed: ModuleNotFoundError: No module named 'TemplatedData'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\PC\AppData\Local\Programs\Python\Python39\Scripts\robot.exe
+  C:\Users\PC\AppData\Local\Programs\Python\Python39\python39.zip
+  C:\Users\PC\AppData\Local\Programs\Python\Python39\DLLs
+  C:\Users\PC\AppData\Local\Programs\Python\Python39\lib
+  C:\Users\PC\AppData\Local\Programs\Python\Python39
+  C:\Users\PC\AppData\Local\Programs\Python\Python39\lib\site-packages</msg>
+<msg timestamp="20211003 20:01:00.605" level="ERROR">Error in resource file 'D:\Projects\Central\Practice\Robotpractice_Guru\keywords\web\page\newcustomer_page.robot': Creating keyword 'Add new customer' failed: Invalid argument specification: Multiple errors:
+- Invalid argument syntax '${gender_value} ${dob}'.
+- Invalid argument syntax '${city} ${state}'.</msg>
+</errors>
+</robot>

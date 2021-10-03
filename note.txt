@@ -1,0 +1,27 @@
+
+*** Variables ***
+#//*[contains(text(),'Customer name must not be blank')]
+#//*[contains(text(),'Date Field must not be blank')]
+#//*[contains(text(),'Address Field must not be blank')]
+#//*[contains(text(),'City Field must not be blank')]
+#//*[contains(text(),'State must not be blank')]
+#//*[contains(text(),'PIN Code must not be blank')]
+#//*[contains(text(),'Mobile no must not be blank')]
+#//*[contains(text(),'Email-ID must not be blank')]
+#//*[contains(text(),'Password must not be blank')]
+
+#----------
+1- work with radio button
+...  select radio button        name            value
+...  Example: select radio button   rad1            m
+#2-selectcheck box
+... 
+
+
+----
+Question:
+1. Có hai function là nối nhau ví dụ cần login xong mới có thể vào các  function khác
+ví dụ bài tập này: cần login xong mới tạo new customer được
+
+Vậy ở cái test case tạo new customer, có chọn cố định là username và password ko?
+có được dùng lại phần test case valid của login không?

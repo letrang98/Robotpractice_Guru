@@ -1,0 +1,2 @@
+${customer_name};${gender_value};${dob};${address};${city};${state};${pin};${mobilephone};${email};${password}
+aaaaa;f;08/09/1992;mydinh;ha noi;viet nam;123456;123456789;aaa@gmail.com;aaa@123

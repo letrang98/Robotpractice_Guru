@@ -1,0 +1,10 @@
+${customer_name};${gender_value};${dob};${address};${city};${state};${pin};${mobilephone};${email};${password}
+;f;08/09/1992;my dinh;ha noi;viet nam;123456;123456789;aaa@gmail.com;aaa@123
+name1;f;;my dinh;ha noi;viet nam;123456;123456789;aaa@gmail.com;aaa@123
+name2;m;08/09/1992;;ha noi;viet nam;123456;123456789;aaa@gmail.com;aaa@123
+name3;f;08/09/1992;mydinh;;viet nam;123456;123456789;aaa@gmail.com;aaa@123
+name4;f;08/09/1992;mydinh;ha noi;;123456;123456789;aaa@gmail.com;aaa@123
+name5;f;08/09/1992;mydinh;ha noi;viet nam;;123456789;aaa@gmail.com;aaa@123
+name6;f;08/09/1992;mydinh;ha noi;viet nam;123456;;aaa@gmail.com;aaa@123
+name7;f;08/09/1992;mydinh;ha noi;viet nam;123456;123456789;;aaa@123
+name8;f;08/09/1992;mydinh;ha noi;viet nam;123456;123456789;aaa@gmail.com;
