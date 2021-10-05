@@ -10,9 +10,9 @@ Add new customer
     login_page.Login page   ${userid}      ${password}
     home_page.Go to New customer page
     Verify new customer page is loaded
-    [Arguments]     ${customer_name}    ${gender_value}     ${dob}      ${address}      ${city}     ${state}        ${pin}      ${mobilephone}      ${email}        ${password}
-    Input customer information      ${customer_name}    ${gender_value}     ${dob}      ${address}      ${city}     ${state}        ${pin}      ${mobilephone}      ${email}        ${password}
-    Click Submit
+    [Arguments]     ${customer_name}    ${gender_value}     ${dob}      ${address}      ${city}     ${state}        ${pin}      ${mobilephone}      ${email}        ${password}     
+    Fill customer information      ${customer_name}    ${gender_value}     ${dob}      ${address}      ${city}     ${state}        ${pin}      ${mobilephone}      ${email}        ${password}
+    Submit customer information
 
 Verify new customer page is loaded
     common_keywords.Verify Web Element Is Visible  ${dictNewCustomerPage.newcustomermessage}
@@ -38,30 +38,60 @@ Verify new customer page is loaded
     common_keywords.Verify Web Element Is Visible  ${dictNewCustomerPage.password}
     log to console  "Password is displayed"
 
-Input customer information
-    [Arguments]      ${customer_name}    ${gender_value}     ${dob}      ${address}      ${city}     ${state}        ${pin}      ${mobilephone}      ${email}        ${password}
+Fill customer information
+    [Arguments]     ${customer_name}    ${gender_value}     ${dob}      ${address}      ${city}     ${state}        ${pin}      ${mobilephone}      ${email}        ${password}
+    Input customer name     ${customer_name} 
+    Input gender for customer       ${gender_value}
+    Input date of birth for customer        ${dob}
+    Input address for customer      ${address}  
+    Input City Address      ${city}
+    Input State Address     ${state}
+    Input PIN settings      ${pin}
+    Input phone number      ${mobilephone}
+    Input email address     ${email}
+    Input customer password     ${password}
+Input customer name
+    [Arguments]      ${customer_name}    
     common_keywords.Input data  ${dictNewCustomerPage.customername}  ${customer_name}
     log     value.${customer_name}
+Input gender for customer
+    [Arguments]      ${gender_value}
     common_keywords.Select Radio button  ${dictNewCustomerPage.gender}  ${gender_value}
     log     value.${gender_value}
+Input date of birth for customer
+    [Arguments]      ${dob}
     common_keywords.Input data  ${dictNewCustomerPage.dob}  ${dob}
     log     value.${dob}
+Input address for customer
+    [Arguments]      ${address}
     common_keywords.Input data  ${dictNewCustomerPage.address}  ${address}
     log     value.${address}
+Input City Address
+    [Arguments]      ${city}
     common_keywords.Input data  ${dictNewCustomerPage.city}  ${city}
     log     value.${city}
+Input State Address
+    [Arguments]      ${state}
     common_keywords.Input data  ${dictNewCustomerPage.state}  ${state}
     log     value.${state}
+Input PIN settings
+    [Arguments]      ${pin}
     common_keywords.Input data  ${dictNewCustomerPage.pin}  ${pin}
     log     value.${pin}
+Input phone number
+    [Arguments]      ${mobilephone}
     common_keywords.Input data  ${dictNewCustomerPage.mobilephone}  ${mobilephone}
     log     value.${mobilephone}
+Input email address
+    [Arguments]      ${email}
     common_keywords.Input data  ${dictNewCustomerPage.email}  ${email}
     log     value.${email}
+Input customer password
+    [Arguments]      ${password}
     common_keywords.Input data  ${dictNewCustomerPage.password}  ${password}
     log     value.${password}
 
-Click Submit
+Submit customer information
     common_keywords.Click Element  ${dictNewCustomerPage.submitbutton}  3s
 
 

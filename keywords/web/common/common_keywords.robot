@@ -58,8 +58,10 @@ Select from drop down by label
     Wait Until Keyword Succeeds    3x    5s    SeleniumLibrary.Select From List By Label   ${locator}    ${label}  
 
 Input data
-    [Arguments]     ${locator}      ${input_text}
-    SeleniumLibrary.Input Text     ${locator}    ${input_text}
+    [Arguments]     ${locator}      ${expect_text}
+    SeleniumLibrary.Input Text     ${locator}    ${expect_text}
+    ${real_text}=    SeleniumLibrary.Get Value    ${locator}
+    Should Be Equal    '${real_text}'    '${expect_text}'    
 
 Select Radio button
     [Arguments]     ${locator}      ${value}

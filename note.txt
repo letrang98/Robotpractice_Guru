@@ -25,3 +25,8 @@ ví dụ bài tập này: cần login xong mới tạo new customer được
 
 Vậy ở cái test case tạo new customer, có chọn cố định là username và password ko?
 có được dùng lại phần test case valid của login không?
+
+
+
+-
+[Arguments]     ${customer_name}      ${gender_value}     ${dob}      ${address}      ${city}     ${state}    ${pin}      ${mobilephone}      ${email}        ${password}
