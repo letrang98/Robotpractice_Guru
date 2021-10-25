@@ -13,4 +13,5 @@
 ...     password=xpath=//*[@name='password']
 ...     submitbutton=xpath=//input[@type='submit']
 ...     resetbutton=xpath=//input[@type='reset']
+...     radio_gender=xpath=//input[@value="{gender}"]
 

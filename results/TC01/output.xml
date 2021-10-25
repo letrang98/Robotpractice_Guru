@@ -1,134 +1,1027 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20211003 20:01:00.123" rpa="false" schemaversion="2">
-<suite id="s1" name="TC01 valid newcustomer" source="D:\Projects\Central\Practice\Robotpractice_Guru\testcases\TC01_valid_newcustomer.robot">
-<test id="s1-t1" name="TC01: Create new valid customer aaaaa">
-<kw name="Open browser to page" library="common_keywords" type="SETUP">
+<robot generator="Robot 3.2.1 (Python 3.9.7 on win32)" generated="20211025 15:01:42.376" rpa="false">
+<suite id="s1" name="TC01 valid newcustomer" source="D:\Robot\Robotpractice_Guru\testcases\TC01_valid_newcustomer.robot">
+<test id="s1-t1" name="TC01">
+<kw name="Open browser to page" library="common_keywords" type="setup">
+<arguments>
 <arg>${base_url}</arg>
+</arguments>
 <kw name="Evaluate" library="BuiltIn">
-<var>${options}</var>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20211003 20:01:00.623" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000226763E6820&gt;</msg>
-<status status="PASS" starttime="20211003 20:01:00.623" endtime="20211003 20:01:00.623"/>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20211025 15:01:42.952" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000018C5E540EB0&gt;</msg>
+<status status="PASS" starttime="20211025 15:01:42.952" endtime="20211025 15:01:42.952"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
-<var>${exclude}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
 <arg>"fasp"=True</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20211003 20:01:00.623" level="INFO">${exclude} = {'"fasp"': 'True'}</msg>
-<status status="PASS" starttime="20211003 20:01:00.623" endtime="20211003 20:01:00.623"/>
+</arguments>
+<assign>
+<var>${exclude}</var>
+</assign>
+<msg timestamp="20211025 15:01:42.953" level="INFO">${exclude} = {'"fasp"': 'True'}</msg>
+<status status="PASS" starttime="20211025 15:01:42.952" endtime="20211025 15:01:42.953"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
-<var>${prefs}</var>
-<arg>protocol_handler.excluded_schemes=${exclude}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20211003 20:01:00.624" level="INFO">${prefs} = {'protocol_handler.excluded_schemes': {'"fasp"': 'True'}}</msg>
-<status status="PASS" starttime="20211003 20:01:00.623" endtime="20211003 20:01:00.624"/>
+<arguments>
+<arg>protocol_handler.excluded_schemes=${exclude}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20211025 15:01:42.953" level="INFO">${prefs} = {'protocol_handler.excluded_schemes': {'"fasp"': 'True'}}</msg>
+<status status="PASS" starttime="20211025 15:01:42.953" endtime="20211025 15:01:42.953"></status>
 </kw>
 <kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-infobars</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20211003 20:01:00.624" endtime="20211003 20:01:00.624"/>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:42.953" endtime="20211025 15:01:42.953"></status>
 </kw>
 <kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
 <arg>${options}</arg>
 <arg>add_experimental_option</arg>
 <arg>prefs</arg>
 <arg>${prefs}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20211003 20:01:00.624" endtime="20211003 20:01:00.624"/>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:42.953" endtime="20211025 15:01:42.954"></status>
 </kw>
 <kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
 <arg>Chrome</arg>
 <arg>chrome_options=${options}</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20211003 20:01:00.624" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20211003 20:01:00.624" endtime="20211003 20:01:01.645"/>
+</arguments>
+<msg timestamp="20211025 15:01:42.954" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20211025 15:01:42.954" endtime="20211025 15:01:44.107"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20211003 20:01:01.645" endtime="20211003 20:01:01.777"/>
+<status status="PASS" starttime="20211025 15:01:44.107" endtime="20211025 15:01:44.237"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>${speed}</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20211003 20:01:01.777" endtime="20211003 20:01:01.777"/>
+<arguments>
+<arg>${speed}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:44.237" endtime="20211025 15:01:44.237"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
-<arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20211003 20:01:01.777" level="INFO">Opening url 'http://www.demo.guru99.com/V4/index.php'</msg>
-<status status="PASS" starttime="20211003 20:01:01.777" endtime="20211003 20:01:03.773"/>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:44.237" level="INFO">Opening url 'http://www.demo.guru99.com/V4/index.php'</msg>
+<status status="PASS" starttime="20211025 15:01:44.237" endtime="20211025 15:01:47.098"></status>
 </kw>
-<status status="PASS" starttime="20211003 20:01:00.623" endtime="20211003 20:01:03.773"/>
+<status status="PASS" starttime="20211025 15:01:42.951" endtime="20211025 15:01:47.098"></status>
 </kw>
-<kw name="TC01: Create new valid customer">
+<kw name="TC01_Valid_Customer">
+<arguments>
 <arg>aaaaa</arg>
-<arg>${gender_value} ${dob}</arg>
+<arg>f</arg>
+<arg>08/09/1992</arg>
 <arg>mydinh</arg>
-<arg>${city} ${state}</arg>
+<arg>ha noi</arg>
+<arg>viet nam</arg>
 <arg>123456</arg>
 <arg>123456789</arg>
 <arg>aaa@gmail.com</arg>
 <arg>aaa@123</arg>
-<msg timestamp="20211003 20:01:03.773" level="FAIL">Invalid argument specification: Multiple errors:
-- Invalid argument syntax '${gender_value} ${dob}'.
-- Invalid argument syntax '${city} ${state}'.</msg>
-<status status="FAIL" starttime="20211003 20:01:03.773" endtime="20211003 20:01:03.773"/>
+</arguments>
+<kw name="Add new customer" library="newcustomer_page">
+<arguments>
+<arg>${customer_name}</arg>
+<arg>${gender_value}</arg>
+<arg>${dob}</arg>
+<arg>${address}</arg>
+<arg>${city}</arg>
+<arg>${state}</arg>
+<arg>${pin}</arg>
+<arg>${mobilephone}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Login page" library="login_page">
+<arguments>
+<arg>${userid}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Verify loginpage is loaded" library="login_page">
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictLoginPage.logo}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:47.105" endtime="20211025 15:01:47.233"></status>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:47.233" endtime="20211025 15:01:47.461"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:47.105" endtime="20211025 15:01:47.461"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictLoginPage.guideline}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:47.461" endtime="20211025 15:01:47.583"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:47.583" endtime="20211025 15:01:47.800"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:47.461" endtime="20211025 15:01:47.800"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:47.105" endtime="20211025 15:01:47.800"></status>
+</kw>
+<kw name="Input username and password" library="login_page">
+<kw name="Input data" library="common_keywords">
+<arguments>
+<arg>${dictLoginPage.userid}</arg>
+<arg>${userid}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:47.800" level="INFO">Typing text 'mngr357064' into text field 'xpath=//input[@name = "uid"]'.</msg>
+<status status="PASS" starttime="20211025 15:01:47.800" endtime="20211025 15:01:48.172"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:47.800" endtime="20211025 15:01:48.172"></status>
+</kw>
+<kw name="Input data" library="common_keywords">
+<arguments>
+<arg>${dictLoginPage.password}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:48.173" level="INFO">Typing text 'apedYtA' into text field 'xpath=//input[@name = "password"]'.</msg>
+<status status="PASS" starttime="20211025 15:01:48.172" endtime="20211025 15:01:48.639"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:48.172" endtime="20211025 15:01:48.639"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:47.800" endtime="20211025 15:01:48.639"></status>
+</kw>
+<kw name="Verify login successfully or not" library="login_page">
+<kw name="Click Element" library="common_keywords">
+<arguments>
+<arg>${dictLoginPage.loginbutton}</arg>
+<arg>3s</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:48.639" endtime="20211025 15:01:48.888"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:48.888" level="INFO">Clicking element 'xpath=//input[@name= "btnLogin"]'.</msg>
+<status status="PASS" starttime="20211025 15:01:48.888" endtime="20211025 15:01:50.654"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:48.639" endtime="20211025 15:01:50.654"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.welcome}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:50.654" endtime="20211025 15:01:50.764"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:50.764" endtime="20211025 15:01:50.996"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:50.654" endtime="20211025 15:01:50.996"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.welcomemessage}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:50.997" endtime="20211025 15:01:51.120"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:51.120" endtime="20211025 15:01:51.354"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:50.996" endtime="20211025 15:01:51.354"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.logoutbutton}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:51.354" endtime="20211025 15:01:51.477"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:51.477" endtime="20211025 15:01:51.697"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:51.354" endtime="20211025 15:01:51.697"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:48.639" endtime="20211025 15:01:51.697"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:47.104" endtime="20211025 15:01:51.697"></status>
+</kw>
+<kw name="Go to New customer page" library="home_page">
+<kw name="Click Element" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.newcustomerbutton}</arg>
+<arg>10s</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:51.698" endtime="20211025 15:01:51.930"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:51.930" level="INFO">Clicking element 'xpath=//a[contains(text(),'New Customer')]'.</msg>
+<status status="PASS" starttime="20211025 15:01:51.930" endtime="20211025 15:01:52.521"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:51.698" endtime="20211025 15:01:52.521"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:51.697" endtime="20211025 15:01:52.521"></status>
+</kw>
+<kw name="Verify new customer page is loaded" library="newcustomer_page">
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.newcustomermessage}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:52.521" endtime="20211025 15:01:52.629"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:52.629" endtime="20211025 15:01:52.877"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:52.521" endtime="20211025 15:01:52.877"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"Add new customer is displayed"</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:52.878" endtime="20211025 15:01:52.879"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.customername}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:52.882" endtime="20211025 15:01:53.005"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:53.005" endtime="20211025 15:01:53.205"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:52.880" endtime="20211025 15:01:53.205"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"Customer Name box is displayed"</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:53.205" endtime="20211025 15:01:53.205"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.gender}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:53.210" endtime="20211025 15:01:53.330"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:53.330" endtime="20211025 15:01:53.605"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:53.205" endtime="20211025 15:01:53.605"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"Gender option is displayed"</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:53.605" endtime="20211025 15:01:53.605"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.dob}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:53.610" endtime="20211025 15:01:53.731"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:53.731" endtime="20211025 15:01:53.937"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:53.605" endtime="20211025 15:01:53.937"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"Date of birth selection is displayed"</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:53.937" endtime="20211025 15:01:53.937"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.address}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:53.940" endtime="20211025 15:01:54.064"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:54.064" endtime="20211025 15:01:54.269"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:53.937" endtime="20211025 15:01:54.269"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"Address field is displayed"</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:54.269" endtime="20211025 15:01:54.269"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.city}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:54.273" endtime="20211025 15:01:54.407"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:54.407" endtime="20211025 15:01:54.623"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:54.269" endtime="20211025 15:01:54.623"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"City field is displayed"</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:54.623" endtime="20211025 15:01:54.623"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.state}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:54.623" endtime="20211025 15:01:54.747"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:54.747" endtime="20211025 15:01:54.955"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:54.623" endtime="20211025 15:01:54.955"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"State field is displayed"</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:54.955" endtime="20211025 15:01:54.955"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.pin}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:54.959" endtime="20211025 15:01:55.082"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:55.082" endtime="20211025 15:01:55.325"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:54.955" endtime="20211025 15:01:55.325"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"PIN settings is displayed"</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:55.325" endtime="20211025 15:01:55.325"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.mobilephone}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:55.329" endtime="20211025 15:01:55.450"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:55.450" endtime="20211025 15:01:55.656"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:55.325" endtime="20211025 15:01:55.656"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"Mobile Phone field is displayed"</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:55.656" endtime="20211025 15:01:55.656"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.email}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:55.661" endtime="20211025 15:01:55.782"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:55.782" endtime="20211025 15:01:56.041"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:55.656" endtime="20211025 15:01:56.041"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"Email field is displayed"</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:56.041" endtime="20211025 15:01:56.041"></status>
+</kw>
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.password}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:56.046" endtime="20211025 15:01:56.166"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:56.166" endtime="20211025 15:01:56.411"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:56.041" endtime="20211025 15:01:56.411"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>"Password is displayed"</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:56.411" endtime="20211025 15:01:56.411"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:52.521" endtime="20211025 15:01:56.411"></status>
+</kw>
+<kw name="Fill customer information" library="newcustomer_page">
+<arguments>
+<arg>${customer_name}</arg>
+<arg>${gender_value}</arg>
+<arg>${dob}</arg>
+<arg>${address}</arg>
+<arg>${city}</arg>
+<arg>${state}</arg>
+<arg>${pin}</arg>
+<arg>${mobilephone}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input customer name" library="newcustomer_page">
+<arguments>
+<arg>${customer_name}</arg>
+</arguments>
+<kw name="Input data" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.customername}</arg>
+<arg>${customer_name}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:56.417" level="INFO">Typing text 'aaaaa' into text field 'xpath=//*[@name='name']'.</msg>
+<status status="PASS" starttime="20211025 15:01:56.417" endtime="20211025 15:01:56.812"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:56.416" endtime="20211025 15:01:56.812"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>value.${customer_name}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:56.812" level="INFO">value.aaaaa</msg>
+<status status="PASS" starttime="20211025 15:01:56.812" endtime="20211025 15:01:56.812"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:56.415" endtime="20211025 15:01:56.812"></status>
+</kw>
+<kw name="Select Gender Radio By Gender option" library="newcustomer_page">
+<arguments>
+<arg>f</arg>
+</arguments>
+<kw name="Format String" library="String">
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<arguments>
+<arg>${dictNewCustomerPage}[radio_gender]</arg>
+<arg>gender=${gender_value}</arg>
+</arguments>
+<assign>
+<var>${gender_locator}</var>
+</assign>
+<msg timestamp="20211025 15:01:56.812" level="INFO">${gender_locator} = xpath=//input[@value="f"]</msg>
+<status status="PASS" starttime="20211025 15:01:56.812" endtime="20211025 15:01:56.812"></status>
+</kw>
+<kw name="Click Element" library="common_keywords">
+<arguments>
+<arg>${gender_locator}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:01:56.812" endtime="20211025 15:01:57.012"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:57.012" level="INFO">Clicking element 'xpath=//input[@value="f"]'.</msg>
+<status status="PASS" starttime="20211025 15:01:57.012" endtime="20211025 15:01:57.281"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:56.812" endtime="20211025 15:01:57.281"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:56.812" endtime="20211025 15:01:57.281"></status>
+</kw>
+<kw name="Input date of birth for customer" library="newcustomer_page">
+<arguments>
+<arg>${dob}</arg>
+</arguments>
+<kw name="Input data" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.dob}</arg>
+<arg>${dob}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:57.281" level="INFO">Typing text '08/09/1992' into text field 'xpath=//*[@name='dob']'.</msg>
+<status status="PASS" starttime="20211025 15:01:57.281" endtime="20211025 15:01:57.683"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:57.281" endtime="20211025 15:01:57.683"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>value.${dob}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:57.683" level="INFO">value.08/09/1992</msg>
+<status status="PASS" starttime="20211025 15:01:57.683" endtime="20211025 15:01:57.683"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:57.281" endtime="20211025 15:01:57.683"></status>
+</kw>
+<kw name="Input address for customer" library="newcustomer_page">
+<arguments>
+<arg>${address}</arg>
+</arguments>
+<kw name="Input data" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.address}</arg>
+<arg>${address}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:57.683" level="INFO">Typing text 'mydinh' into text field 'xpath=//*[@name='addr']'.</msg>
+<status status="PASS" starttime="20211025 15:01:57.683" endtime="20211025 15:01:58.083"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:57.683" endtime="20211025 15:01:58.083"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>value.${address}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:58.083" level="INFO">value.mydinh</msg>
+<status status="PASS" starttime="20211025 15:01:58.083" endtime="20211025 15:01:58.083"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:57.683" endtime="20211025 15:01:58.083"></status>
+</kw>
+<kw name="Input City Address" library="newcustomer_page">
+<arguments>
+<arg>${city}</arg>
+</arguments>
+<kw name="Input data" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.city}</arg>
+<arg>${city}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:58.083" level="INFO">Typing text 'ha noi' into text field 'xpath=//*[@name='city']'.</msg>
+<status status="PASS" starttime="20211025 15:01:58.083" endtime="20211025 15:01:58.484"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:58.083" endtime="20211025 15:01:58.484"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>value.${city}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:58.484" level="INFO">value.ha noi</msg>
+<status status="PASS" starttime="20211025 15:01:58.484" endtime="20211025 15:01:58.484"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:58.083" endtime="20211025 15:01:58.484"></status>
+</kw>
+<kw name="Input State Address" library="newcustomer_page">
+<arguments>
+<arg>${state}</arg>
+</arguments>
+<kw name="Input data" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.state}</arg>
+<arg>${state}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:58.484" level="INFO">Typing text 'viet nam' into text field 'xpath=//*[@name='state']'.</msg>
+<status status="PASS" starttime="20211025 15:01:58.484" endtime="20211025 15:01:58.916"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:58.484" endtime="20211025 15:01:58.916"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>value.${state}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:58.916" level="INFO">value.viet nam</msg>
+<status status="PASS" starttime="20211025 15:01:58.916" endtime="20211025 15:01:58.916"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:58.484" endtime="20211025 15:01:58.916"></status>
+</kw>
+<kw name="Input PIN settings" library="newcustomer_page">
+<arguments>
+<arg>${pin}</arg>
+</arguments>
+<kw name="Input data" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.pin}</arg>
+<arg>${pin}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:58.916" level="INFO">Typing text '123456' into text field 'xpath=//*[@name='pinno']'.</msg>
+<status status="PASS" starttime="20211025 15:01:58.916" endtime="20211025 15:01:59.283"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:58.916" endtime="20211025 15:01:59.283"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>value.${pin}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:59.283" level="INFO">value.123456</msg>
+<status status="PASS" starttime="20211025 15:01:59.283" endtime="20211025 15:01:59.283"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:58.916" endtime="20211025 15:01:59.283"></status>
+</kw>
+<kw name="Input phone number" library="newcustomer_page">
+<arguments>
+<arg>${mobilephone}</arg>
+</arguments>
+<kw name="Input data" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.mobilephone}</arg>
+<arg>${mobilephone}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:59.283" level="INFO">Typing text '123456789' into text field 'xpath=//*[@name='telephoneno']'.</msg>
+<status status="PASS" starttime="20211025 15:01:59.283" endtime="20211025 15:01:59.749"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:59.283" endtime="20211025 15:01:59.749"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>value.${mobilephone}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:59.749" level="INFO">value.123456789</msg>
+<status status="PASS" starttime="20211025 15:01:59.749" endtime="20211025 15:01:59.749"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:59.283" endtime="20211025 15:01:59.749"></status>
+</kw>
+<kw name="Input email address" library="newcustomer_page">
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<kw name="Input data" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.email}</arg>
+<arg>${email}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20211025 15:01:59.749" level="INFO">Typing text 'aaa@gmail.com' into text field 'xpath=//*[@name='emailid']'.</msg>
+<status status="PASS" starttime="20211025 15:01:59.749" endtime="20211025 15:02:00.168"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:59.749" endtime="20211025 15:02:00.168"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>value.${email}</arg>
+</arguments>
+<msg timestamp="20211025 15:02:00.168" level="INFO">value.aaa@gmail.com</msg>
+<status status="PASS" starttime="20211025 15:02:00.168" endtime="20211025 15:02:00.168"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:59.749" endtime="20211025 15:02:00.168"></status>
+</kw>
+<kw name="Input customer password" library="newcustomer_page">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input data" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.password}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20211025 15:02:00.168" level="INFO">Typing text 'aaa@123' into text field 'xpath=//*[@name='password']'.</msg>
+<status status="PASS" starttime="20211025 15:02:00.168" endtime="20211025 15:02:00.652"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:02:00.168" endtime="20211025 15:02:00.652"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>value.${password}</arg>
+</arguments>
+<msg timestamp="20211025 15:02:00.652" level="INFO">value.aaa@123</msg>
+<status status="PASS" starttime="20211025 15:02:00.652" endtime="20211025 15:02:00.652"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:02:00.168" endtime="20211025 15:02:00.652"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:56.411" endtime="20211025 15:02:00.652"></status>
+</kw>
+<kw name="Submit customer information" library="newcustomer_page">
+<kw name="Click Element" library="common_keywords">
+<arguments>
+<arg>${dictNewCustomerPage.submitbutton}</arg>
+<arg>3s</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20211025 15:02:00.652" endtime="20211025 15:02:00.883"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20211025 15:02:00.883" level="INFO">Clicking element 'xpath=//input[@type='submit']'.</msg>
+<status status="PASS" starttime="20211025 15:02:00.883" endtime="20211025 15:02:01.963"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:02:00.652" endtime="20211025 15:02:01.963"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:02:00.652" endtime="20211025 15:02:01.963"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:47.102" endtime="20211025 15:02:01.964"></status>
+</kw>
+<status status="PASS" starttime="20211025 15:01:47.100" endtime="20211025 15:02:01.964"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20211003 20:01:03.775" endtime="20211003 20:01:05.925"/>
+<status status="PASS" starttime="20211025 15:02:01.965" endtime="20211025 15:02:04.154"></status>
 </kw>
-<status status="FAIL" starttime="20211003 20:01:00.622" endtime="20211003 20:01:05.925">Invalid argument specification: Multiple errors:
-- Invalid argument syntax '${gender_value} ${dob}'.
-- Invalid argument syntax '${city} ${state}'.</status>
+<status status="PASS" starttime="20211025 15:01:42.950" endtime="20211025 15:02:04.154" critical="yes"></status>
 </test>
-<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20211003 20:01:05.926" endtime="20211003 20:01:05.926"/>
+<status status="PASS" starttime="20211025 15:02:04.156" endtime="20211025 15:02:04.156"></status>
 </kw>
-<status status="FAIL" starttime="20211003 20:01:00.123" endtime="20211003 20:01:05.927"/>
+<status status="PASS" starttime="20211025 15:01:42.376" endtime="20211025 15:02:04.157"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="TC01 valid newcustomer">TC01 valid newcustomer</stat>
+<stat pass="1" fail="0" id="s1" name="TC01 valid newcustomer">TC01 valid newcustomer</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20211003 20:01:00.123" level="ERROR">Error in test case file 'D:\Projects\Central\Practice\Robotpractice_Guru\testcases\TC01_valid_newcustomer.robot': Creating keyword 'TC01: Create new valid customer' failed: Invalid argument specification: Multiple errors:
-- Invalid argument syntax '${gender_value} ${dob}'.
-- Invalid argument syntax '${city} ${state}'.</msg>
-<msg timestamp="20211003 20:01:00.585" level="ERROR">Error in file 'D:\Projects\Central\Practice\Robotpractice_Guru\resources\imports_resources.robot' on line 9: Importing library 'AppiumLibrary' failed: ModuleNotFoundError: No module named 'AppiumLibrary'
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  C:\Users\PC\AppData\Local\Programs\Python\Python39\Scripts\robot.exe
-  C:\Users\PC\AppData\Local\Programs\Python\Python39\python39.zip
-  C:\Users\PC\AppData\Local\Programs\Python\Python39\DLLs
-  C:\Users\PC\AppData\Local\Programs\Python\Python39\lib
-  C:\Users\PC\AppData\Local\Programs\Python\Python39
-  C:\Users\PC\AppData\Local\Programs\Python\Python39\lib\site-packages</msg>
-<msg timestamp="20211003 20:01:00.592" level="ERROR">Error in file 'D:\Projects\Central\Practice\Robotpractice_Guru\resources\imports_resources.robot' on line 10: Importing library 'TemplatedData' failed: ModuleNotFoundError: No module named 'TemplatedData'
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  C:\Users\PC\AppData\Local\Programs\Python\Python39\Scripts\robot.exe
-  C:\Users\PC\AppData\Local\Programs\Python\Python39\python39.zip
-  C:\Users\PC\AppData\Local\Programs\Python\Python39\DLLs
-  C:\Users\PC\AppData\Local\Programs\Python\Python39\lib
-  C:\Users\PC\AppData\Local\Programs\Python\Python39
-  C:\Users\PC\AppData\Local\Programs\Python\Python39\lib\site-packages</msg>
-<msg timestamp="20211003 20:01:00.605" level="ERROR">Error in resource file 'D:\Projects\Central\Practice\Robotpractice_Guru\keywords\web\page\newcustomer_page.robot': Creating keyword 'Add new customer' failed: Invalid argument specification: Multiple errors:
-- Invalid argument syntax '${gender_value} ${dob}'.
-- Invalid argument syntax '${city} ${state}'.</msg>
 </errors>
 </robot>

@@ -13,10 +13,40 @@ Test Teardown        Close Browser
 Test Template        TC01_Valid_Customer
 
 *** Test Cases ***
-TC01       ${customer_name}      ${gender_value}     ${dob}      ${address}      ${city}     ${state}    ${pin}      ${mobilephone}      ${email}        ${password}  
+TC01       
+    ...     ${customer_name}
+    ...     ${gender_value}
+    ...     ${dob}
+    ...     ${address}
+    ...     ${city}
+    ...     ${state}
+    ...     ${pin}
+    ...     ${mobilephone}
+    ...     ${email}
+    ...     ${password}  
 
     
 *** Keywords ***
 TC01_Valid_Customer
-    [Arguments]     ${customer_name}      ${gender_value}     ${dob}      ${address}      ${city}     ${state}    ${pin}      ${mobilephone}      ${email}        ${password}
-    newcustomer_page.Add new customer   ${customer_name}      ${gender_value}     ${dob}      ${address}      ${city}     ${state}    ${pin}      ${mobilephone}      ${email}        ${password}
+    [Arguments]     
+    ...     ${customer_name}
+    ...     ${gender_value}
+    ...     ${dob}
+    ...     ${address}
+    ...     ${city}
+    ...     ${state}
+    ...     ${pin}
+    ...     ${mobilephone}
+    ...     ${email}
+    ...     ${password}
+    newcustomer_page.Add new customer
+    ...     ${customer_name}
+    ...     ${gender_value}
+    ...     ${dob}
+    ...     ${address}
+    ...     ${city}
+    ...     ${state}
+    ...     ${pin}
+    ...     ${mobilephone}
+    ...     ${email}
+    ...     ${password}

@@ -41,7 +41,8 @@ Verify new customer page is loaded
 Fill customer information
     [Arguments]     ${customer_name}    ${gender_value}     ${dob}      ${address}      ${city}     ${state}        ${pin}      ${mobilephone}      ${email}        ${password}
     Input customer name     ${customer_name} 
-    Input gender for customer       ${gender_value}
+    # Input gender for customer       ${gender_value}
+    Select Gender Radio By Gender option        f
     Input date of birth for customer        ${dob}
     Input address for customer      ${address}  
     Input City Address      ${city}
@@ -93,5 +94,12 @@ Input customer password
 
 Submit customer information
     common_keywords.Click Element  ${dictNewCustomerPage.submitbutton}  3s
+
+# gender_value = f -> female
+# gender_value = m -> male
+Select Gender Radio By Gender option
+    [Arguments]         ${gender_value}
+    ${gender_locator}=                  String.Format String            ${dictNewCustomerPage}[radio_gender]        gender=${gender_value}
+    common_keywords.Click Element                   ${gender_locator}
 
 

@@ -60,8 +60,8 @@ Select from drop down by label
 Input data
     [Arguments]     ${locator}      ${expect_text}
     SeleniumLibrary.Input Text     ${locator}    ${expect_text}
-    ${real_text}=    SeleniumLibrary.Get Value    ${locator}
-    Should Be Equal    '${real_text}'    '${expect_text}'    
+    # ${real_text}=    SeleniumLibrary.Get Value    ${locator}
+    # Should Be Equal    '${real_text}'    '${expect_text}'    
 
 Select Radio button
     [Arguments]     ${locator}      ${value}
